@@ -26,7 +26,7 @@ public class JwtService {
 
     public String generateToken(String email) {
         log.debug("Secret Key : {}", secretKey);
-        long expirationTime = 900000;//43200000;
+        long expirationTime = 43200000;
         Date now = new Date();
         Date expirationDate = new Date(now.getTime() + expirationTime);
         
