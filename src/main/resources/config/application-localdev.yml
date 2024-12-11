@@ -1,0 +1,63 @@
+logging:
+  level:
+    ROOT: INFO
+    org.springframework: INFO
+    org.springframework.web: INFO
+    org.springframework.security: DEBUG
+    org.springframework.security.web: DEBUG
+    org.springframework.jdbc.core: INFO
+    org.hibernate:
+      engine.jdbc: INFO
+      SQL: DEBUG
+    de.codecentric: ERROR
+    org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer: WARN
+    com.nutech: DEBUG
+  pattern:
+    console: "%d %p %c{1.} [%t] %m%n"
+server:
+  servlet:
+    context-path: /home-test
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+    min-response-size: 1024
+  tomcat:
+    max-http-form-post-size: 215MB
+spring:
+  boot:
+    admin:
+      client:
+        enabled: false
+        url: http://localhost:8888
+        username: client
+        password: client
+        instance:
+          service-host-type: HOST_NAME
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hometest?ApplicationName=HomeTestApp
+    username: adit
+    password: 1234
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: public
+        jdbc:
+          time_zone: Asia/Jakarta
+    hibernate:
+      ddl-auto: update  # validate, update, create-drop, none
+      show_sql: true
+  servlet:
+    multipart:
+        enabled: true
+        max-file-size: 10MB
+        max-request-size: 10MB
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+security:
+  secret-key: 55bd9a6ba0ecbf4684606b4955a624678cb26b6264a66061a776ccb46ceb7be4

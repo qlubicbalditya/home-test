@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: HomeTest
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: localdev
+  timezone: Asia/Jakarta
