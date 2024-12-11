@@ -24,7 +24,7 @@ public class BalanceEntity {
     @Column(length = 36)
     private String id;
 
-    @Column(columnDefinition = "numeric default 0")
+    @Column(columnDefinition = "numeric")
     private Integer amount;
 
     @Column(name= "profile_id", length = 36, nullable = false)
