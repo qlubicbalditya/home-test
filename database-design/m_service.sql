@@ -1,14 +1,20 @@
+CREATE TABLE IF NOT EXISTS public.m_service
+(
+    id character varying(36) COLLATE pg_catalog."default" NOT NULL,
+    service_code character varying(60) COLLATE pg_catalog."default",
+    service_icon character varying(255) COLLATE pg_catalog."default",
+    service_name character varying(255) COLLATE pg_catalog."default",
+    service_tariff numeric,
+    CONSTRAINT m_service_pkey PRIMARY KEY (id)
+)
 
-INSERT INTO public.m_banner(
-	id,  banner_name, banner_image, description) VALUES 
-	('1', 'Banner 1', 'https://nutech-integrasi.app/dummy.jpg', 'Lerem Ipsum Dolor sit amet'),
-	('2', 'Banner 2', 'https://nutech-integrasi.app/dummy.jpg', 'Lerem Ipsum Dolor sit amet'),
-	('3', 'Banner 3', 'https://nutech-integrasi.app/dummy.jpg', 'Lerem Ipsum Dolor sit amet'),
-	('4', 'Banner 4', 'https://nutech-integrasi.app/dummy.jpg', 'Lerem Ipsum Dolor sit amet'),
-	('5', 'Banner 5', 'https://nutech-integrasi.app/dummy.jpg', 'Lerem Ipsum Dolor sit amet'),
-	('6', 'Banner 6', 'https://nutech-integrasi.app/dummy.jpg', 'Lerem Ipsum Dolor sit amet');
-	
-	
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.m_service
+    OWNER to postgres;
+
+
+-- Inject data service
 INSERT INTO public.m_service(
 	id, service_code, service_name, service_icon, service_tariff) VALUES 
 	('1', 'PAJAK', 'Pajak PBB', 'https://nutech-integrasi.app/dummy.jpg', 40000),
