@@ -35,9 +35,12 @@ spring:
         instance:
           service-host-type: HOST_NAME
   datasource:
-    url: jdbc:postgresql://localhost:5432/hometest?ApplicationName=HomeTestApp
-    username: adit
-    password: 1234
+    # url: jdbc:postgresql://localhost:5432/hometest?ApplicationName=HomeTestApp
+    # username: adit
+    # password: 1234
+    url: jdbc:postgresql://junction.proxy.rlwy.net:34977/railway
+    username: postgres
+    password: zBKYzCSJyxjxBWvaCYuUlqFHynZNyeqm
   jpa:
     open-in-view: false
     properties:
