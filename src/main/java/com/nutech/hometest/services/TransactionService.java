@@ -84,6 +84,8 @@ public class TransactionService {
         transactionRepo.saveDataTransaction(uuid, generateInvoiceNumber(), serviceData.getId(), 
             serviceData.getServiceTariff(), TransactionTypeEnum.PAYMENT.name(), LocalDateTime.now(), profileEntity.getId());
 
+        transactionRepo.saveDataBalance(Utils.createUUID(), -serviceData.getServiceTariff(), profileEntity.getId(), LocalDateTime.now());
+
         return transactionRepo.findDataTransaction(uuid);
         
     }
